@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="840d1a83-ae4b-47d1-af8b-ecd8fcc25524" name="更改" comment="v1.0.0 -1" />
+    <list default="true" id="840d1a83-ae4b-47d1-af8b-ecd8fcc25524" name="更改" comment="v1.0.0 -2">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/___.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/___.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/___1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/___1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/___2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/___2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/___3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/___3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,9 +24,20 @@
       </list>
     </option>
   </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RESET_MODE" value="KEEP" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -57,6 +75,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/Codes/Projects/NTQQBots&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -199,6 +218,8 @@
       <workItem from="1710082782111" duration="125000" />
       <workItem from="1710082922392" duration="95000" />
       <workItem from="1710083031679" duration="1312000" />
+      <workItem from="1710084368507" duration="1912000" />
+      <workItem from="1710086881914" duration="861000" />
     </task>
     <task id="LOCAL-00001" summary="v1.0.0 -1">
       <option name="closed" value="true" />
@@ -360,7 +381,47 @@
       <option name="project" value="LOCAL" />
       <updated>1710084111339</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="v1.0.0 -1">
+      <option name="closed" value="true" />
+      <created>1710084379257</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1710084379257</updated>
+    </task>
+    <task id="LOCAL-00022" summary="v1.0.0 -1">
+      <option name="closed" value="true" />
+      <created>1710084403813</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1710084403813</updated>
+    </task>
+    <task id="LOCAL-00023" summary="v1.0.0 -1">
+      <option name="closed" value="true" />
+      <created>1710084422119</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1710084422119</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Revert &quot;Initial commit&quot;&#10;&#10;This reverts commit 2966643c">
+      <option name="closed" value="true" />
+      <created>1710084446373</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1710084446373</updated>
+    </task>
+    <task id="LOCAL-00025" summary="v1.0.0 -2">
+      <option name="closed" value="true" />
+      <created>1710084512207</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1710084512207</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -381,11 +442,11 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Revert &quot;v1.0.0 -1&quot;&#10;&#10;This reverts commit fa93d1e0" />
     <MESSAGE value="v1.0.0 -3" />
-    <MESSAGE value="v1.0.0 -2" />
     <MESSAGE value="1" />
-    <MESSAGE value="Revert &quot;Initial commit&quot;&#10;&#10;This reverts commit 2966643c" />
     <MESSAGE value="v1.0.0 -1" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.0.0 -1" />
+    <MESSAGE value="Revert &quot;Initial commit&quot;&#10;&#10;This reverts commit 2966643c" />
+    <MESSAGE value="v1.0.0 -2" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.0.0 -2" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/NTQQBots$pdf_to_csv.coverage" NAME="pdf_to_csv 覆盖结果" MODIFIED="1709882442353" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plugins/course" />
@@ -393,6 +454,6 @@
     <SUITE FILE_PATH="coverage/NTQQBots$date_time.coverage" NAME="date_time 覆盖结果" MODIFIED="1709739949136" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plugins/course" />
     <SUITE FILE_PATH="coverage/NTQQBots$__init__.coverage" NAME="__init__ 覆盖结果" MODIFIED="1710081450281" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plugins/course" />
     <SUITE FILE_PATH="coverage/NTQQBots$test.coverage" NAME="test 覆盖结果" MODIFIED="1710081352121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plugins/course" />
-    <SUITE FILE_PATH="coverage/NTQQBots$bot.coverage" NAME="bot 覆盖结果" MODIFIED="1710083110908" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NTQQBots$bot.coverage" NAME="bot 覆盖结果" MODIFIED="1710087536049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
