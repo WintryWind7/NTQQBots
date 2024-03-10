@@ -383,7 +383,12 @@ class Course(object):
         #             if chunk:  # 过滤掉空的chunks
         #                 file.write(chunk)
         #     logger.success('读取新课表成功！')
-        self.course_list = main()
+        temp_list = []
+        course_list = main()
+        for course in course_list:
+            temp_list.append(self.preprocess(course))
+        self.course_list = temp_list
+        del temp_list
         # else:
         #     logger.error('读取新课表失败！')
 

@@ -27,26 +27,26 @@ def get_send_text(info, code):
     text = ''
     le = len(info)
     if code == 1:
-        for index, course in enumerate(info):
-            text += f'课程名称: {course[0]}\n'
-            text += f'节次: {course[1]} {course[2]} ({course[-1]})\n'
-            text += f'授课教师: {course[5]}\n'
-            text += f'地点: {course[4]}'
+        for index, lst in enumerate(info):
+            text += f'课程名称: {lst[0]}\n'
+            text += f'节次: {lst[1]} {lst[2]} ({lst[-1]})\n'
+            text += f'授课教师: {lst[5]}\n'
+            text += f'地点: {lst[4]}'
             if index != le - 1:
                 text += '\n\n'
         return text
     elif code == 2:
-        for index, course in enumerate(info):
-            text += f'课程名称: {course[0]}\n'
-            text += f'节次: {course[1]} {course[2]} ({course[-1]})\n'
-            if len(course[3]) == 1:
-                text += f'周次: 第{course[3]}周 (当前: 第 {course.locate_week()} 周)\n'
+        for index, lst in enumerate(info):
+            text += f'课程名称: {lst[0]}\n'
+            text += f'节次: {lst[1]} {lst[2]} ({lst[-1]})\n'
+            if len(lst[3]) == 1:
+                text += f'周次: 第{lst[3]}周 (当前: 第 {course.locate_week()} 周)\n'
             else:
-                text += f'周次: {course[3][0]}-{course[3][-1]} 周 (当前: 第 {course.locate_week()} 周)\n'
-            text += f'授课教师: {course[5]}\n'
-            text += f'地点: {course[4]}'
-            text += f'教学班组成: {course[-3]})\n'
-            text += f'学分: {course[-2]})\n'
+                text += f'周次: {lst[3][0]}-{lst[3][-1]} 周 (当前: 第 {course.locate_week()} 周)\n'
+            text += f'授课教师: {lst[5]}\n'
+            text += f'地点: {lst[4]}'
+            text += f'教学班组成: {lst[-3]})\n'
+            text += f'学分: {lst[-2]})\n'
             if index != le - 1:
                 text += '\n\n'
         return text
@@ -124,7 +124,7 @@ async def handle_private_msg(bot: Bot, event, state: T_State, args: Message = Co
     await msg_handler.finish(Message("暂未查询到课程。"))
 
 super_handler = on_command(cmd=('课程', '更新'),
-                            aliases=('课表', '更新'),
+                            aliases={('课表', '更新')},
                             rule=None,
                             permission=SUPERUSER,
                             priority=prior-2,
