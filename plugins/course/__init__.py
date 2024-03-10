@@ -123,15 +123,13 @@ async def handle_private_msg(bot: Bot, event, state: T_State, args: Message = Co
         await msg_handler.finish(Message(text))
     await msg_handler.finish(Message("暂未查询到课程。"))
 
-super_handler = on_command(cmd=course_cmd,
-                            aliases=course_aliases,
+super_handler = on_command(cmd=('课程', '更新'),
+                            aliases=('课表', '更新'),
                             rule=None,
                             permission=SUPERUSER,
                             priority=prior-2,
                             block=True)
 @super_handler.handle()
 async def handle_private_msg(bot: Bot, event, state: T_State, args: Message = CommandArg()):
-    args = args_split(args)  # /cmd [date, week, others]
-    if args == '更新':
-        course.download_new_pdf()
-        await super_handler.finish(Message('Done.'))
+    course.download_new_pdf()
+    await super_handler.finish(Message('Done.'))
