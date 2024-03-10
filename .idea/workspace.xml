@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="840d1a83-ae4b-47d1-af8b-ecd8fcc25524" name="更改" comment="v1.0.0 -2">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/___.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/___.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/___1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/___1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/___2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/___2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/___3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/___3.xml" afterDir="false" />
+    <list default="true" id="840d1a83-ae4b-47d1-af8b-ecd8fcc25524" name="更改" comment="v1.0.0 -3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/course/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/course/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,6 +95,28 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.bot">
+    <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="NTQQBots" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/plugins/course" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/plugins/course/__init__.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="bot" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="NTQQBots" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -190,6 +208,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.bot" />
+        <item itemvalue="Python.__init__" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.get_course (1)" />
         <item itemvalue="Python.get_course" />
@@ -219,7 +238,7 @@
       <workItem from="1710082922392" duration="95000" />
       <workItem from="1710083031679" duration="1312000" />
       <workItem from="1710084368507" duration="1912000" />
-      <workItem from="1710086881914" duration="861000" />
+      <workItem from="1710086881914" duration="1373000" />
     </task>
     <task id="LOCAL-00001" summary="v1.0.0 -1">
       <option name="closed" value="true" />
@@ -421,7 +440,23 @@
       <option name="project" value="LOCAL" />
       <updated>1710084512207</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="v1.0.0 -3">
+      <option name="closed" value="true" />
+      <created>1710088003416</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1710088003416</updated>
+    </task>
+    <task id="LOCAL-00027" summary="v1.0.0 -3">
+      <option name="closed" value="true" />
+      <created>1710088104027</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1710088104027</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -441,19 +476,19 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Revert &quot;v1.0.0 -1&quot;&#10;&#10;This reverts commit fa93d1e0" />
-    <MESSAGE value="v1.0.0 -3" />
     <MESSAGE value="1" />
     <MESSAGE value="v1.0.0 -1" />
     <MESSAGE value="Revert &quot;Initial commit&quot;&#10;&#10;This reverts commit 2966643c" />
     <MESSAGE value="v1.0.0 -2" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.0.0 -2" />
+    <MESSAGE value="v1.0.0 -3" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.0.0 -3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/NTQQBots$pdf_to_csv.coverage" NAME="pdf_to_csv 覆盖结果" MODIFIED="1709882442353" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plugins/course" />
     <SUITE FILE_PATH="coverage/NTQQBots$get_course__1_.coverage" NAME="get_course (1) 覆盖结果" MODIFIED="1710080840270" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plugins/course" />
     <SUITE FILE_PATH="coverage/NTQQBots$date_time.coverage" NAME="date_time 覆盖结果" MODIFIED="1709739949136" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plugins/course" />
-    <SUITE FILE_PATH="coverage/NTQQBots$__init__.coverage" NAME="__init__ 覆盖结果" MODIFIED="1710081450281" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plugins/course" />
+    <SUITE FILE_PATH="coverage/NTQQBots$__init__.coverage" NAME="__init__ 覆盖结果" MODIFIED="1710088081753" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plugins/course" />
     <SUITE FILE_PATH="coverage/NTQQBots$test.coverage" NAME="test 覆盖结果" MODIFIED="1710081352121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plugins/course" />
-    <SUITE FILE_PATH="coverage/NTQQBots$bot.coverage" NAME="bot 覆盖结果" MODIFIED="1710087536049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NTQQBots$bot.coverage" NAME="bot 覆盖结果" MODIFIED="1710088192279" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

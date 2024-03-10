@@ -124,7 +124,7 @@ async def handle_private_msg(bot: Bot, event, state: T_State, args: Message = Co
     await msg_handler.finish(Message("暂未查询到课程。"))
 
 super_handler = on_command(cmd=('课程', '更新'),
-                            aliases=('课表', '更新'),
+                            aliases={('课表', '更新')},
                             rule=None,
                             permission=SUPERUSER,
                             priority=prior-2,
