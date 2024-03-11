@@ -6,6 +6,13 @@ import shutil
 import requests
 from nonebot import logger
 
+
+def current_path(*args):
+    """用于获取准确的目录"""
+    current_script_path = os.path.dirname(os.path.abspath(__file__))
+    data_file_path = os.path.join(current_script_path, *args)
+    return data_file_path
+
 # === datetime start===
 def locate_week(input_date_str=datetime.now().strftime("%m-%d")):
     start_date = datetime(2024, 2, 26)
@@ -184,8 +191,8 @@ def change_time_to_daytime(lst):
 # === main start====
 def main():
 
-    path = [file for file in os.listdir(os.path.join('.', 'data')) if file.endswith('.pdf')]
-    doc = fitz.open((os.path.join(os.getcwd(), 'data', path[0])))
+    path = [file for file in os.listdir(current_path('data')) if file.endswith('.pdf')]
+    doc = fitz.open(current_path('data', path[0]))
 
     text = ''
     for page in doc:
@@ -263,11 +270,9 @@ def main():
     return course_list
 
 
-
-
 def get_new_course():
     course_list = main()
-    list_to_csv_with_index(course_list, os.path.join('.', 'data', 'course.csv'))
+    list_to_csv_with_index(course_list, current_path('data', 'course.csv'))
     return course_list
 
 # === main end====
