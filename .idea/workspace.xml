@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="840d1a83-ae4b-47d1-af8b-ecd8fcc25524" name="更改" comment="v1.0.0 -4" />
+    <list default="true" id="840d1a83-ae4b-47d1-af8b-ecd8fcc25524" name="更改" comment="v1.0.0 -5">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -237,6 +239,7 @@
       <workItem from="1710084368507" duration="1912000" />
       <workItem from="1710086881914" duration="1373000" />
       <workItem from="1710088646580" duration="311000" />
+      <workItem from="1710089201608" duration="155000" />
     </task>
     <task id="LOCAL-00001" summary="v1.0.0 -1">
       <option name="closed" value="true" />
@@ -470,7 +473,31 @@
       <option name="project" value="LOCAL" />
       <updated>1710088728481</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="v1.0.0 -4">
+      <option name="closed" value="true" />
+      <created>1710089304853</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1710089304853</updated>
+    </task>
+    <task id="LOCAL-00031" summary="v1.0.0 -5">
+      <option name="closed" value="true" />
+      <created>1710089316220</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1710089316220</updated>
+    </task>
+    <task id="LOCAL-00032" summary="v1.0.0 -5">
+      <option name="closed" value="true" />
+      <created>1710089346238</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1710089346238</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -496,7 +523,9 @@
     <MESSAGE value="v1.0.0 -2" />
     <MESSAGE value="v1.0.0 -3" />
     <MESSAGE value="v1.0.0 -4" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.0.0 -4" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <MESSAGE value="v1.0.0 -5" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.0.0 -5" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/NTQQBots$pdf_to_csv.coverage" NAME="pdf_to_csv 覆盖结果" MODIFIED="1709882442353" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plugins/course" />

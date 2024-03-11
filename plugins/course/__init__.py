@@ -44,9 +44,9 @@ def get_send_text(info, code):
             else:
                 text += f'周次: {lst[3][0]}-{lst[3][-1]} 周 (当前: 第 {course.locate_week()} 周)\n'
             text += f'授课教师: {lst[5]}\n'
-            text += f'地点: {lst[4]}'
+            text += f'地点: {lst[4]}\n'
             text += f'教学班组成: {lst[-3]})\n'
-            text += f'学分: {lst[-2]})\n'
+            text += f'学分: {lst[-2]})'
             if index != le - 1:
                 text += '\n\n'
         return text
