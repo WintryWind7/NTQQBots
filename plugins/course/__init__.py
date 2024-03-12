@@ -1,15 +1,76 @@
-from nonebot import on_command
+import nonebot
+from nonebot import on_command, get_bot
 from nonebot.adapters.onebot.v11 import Bot, Message, MessageEvent, PrivateMessageEvent, GroupMessageEvent
 from nonebot.rule import to_me, Rule
 from nonebot.typing import T_State
 from nonebot.permission import SUPERUSER
 from nonebot.adapters.onebot.v11.permission import GROUP, PRIVATE_FRIEND
-from .get_course import get_new_course, Course
+from .get_course import course, get_course_list
 from nonebot.params import CommandArg
 import re
 from datetime import datetime, timedelta
+from nonebot import require
+from .database_tools import reset_and_insert_today_course, get_db_todays_course_row, del_db_todays_course_row
 
-course = Course(get_new_course())
+
+# 定时任务
+require("nonebot_plugin_apscheduler")
+from nonebot_plugin_apscheduler import scheduler
+
+async def send_message_percourse(lst):
+    bot = get_bot()
+    text = f'-----下节课程-----'
+    text += f'课程名称: {lst[0]}\n'
+    text += f'节次: {lst[1]} {lst[2]} ({lst[-1]})\n'
+    text += f'授课教师: {lst[5]}\n'
+    text += f'地点: {lst[4]}'
+    await bot.send_group_msg(group=164264920, message=Message(text))
+    del_db_todays_course_row()
+    await set_job_scheduled()
+
+@scheduler.scheduled_job("cron", hour="7",minute='00' ,id="daily")
+async def run_every_day_7():
+    data_list = course.get_by_date(datetime.today().strftime('%m-%d'))
+    for lst in data_list:
+        if len(lst[3]) == 1:
+            lst[3] = str(lst[3])
+        else:
+            lst[3] = f"{lst[3][0]}-{lst[3][-1]}"
+    if data_list:
+        text = f"今日课程: {datetime.today().strftime('%m-%d')}\n"
+        text += get_send_text(data_list, 1)
+        bot = get_bot()
+        data_list = [tuple(sublist) for sublist in data_list]
+        reset_and_insert_today_course(data_list)
+        await bot.send_group_msg(group=164264920, message=Message(text))
+
+def get_send_time():
+    """从数据库中获取课程"""
+    lst_time = get_db_todays_course_row()
+    if lst_time:
+        time_str = lst_time[-1].split('-')[0]
+        time_str = datetime.strptime(time_str, "%H:%M")
+        time_str = time_str - timedelta(minutes=45)
+        hours, minutes = str(time_str.hour), str(time_str.minute)
+        return hours, minutes, lst_time
+    else:
+        return '00', '00', None
+
+def set_job_scheduled():
+    """设定定时任务"""
+    hours, minutes, lst_time = get_send_time()
+    if lst_time:
+        try:
+            scheduler.remove_job('show_next_course')
+        except:
+            pass
+        scheduler.add_job(send_message_percourse, 'cron', hour=hours, minute=minutes, id='show_next_course', args=[lst_time])
+    else:
+        return
+
+set_job_scheduled()
+
+
 
 # 此插件用于汇报课程情况
 prior = 30
@@ -53,52 +114,6 @@ def get_send_text(info, code):
     else:
         return '踏马的又出bug了！'
 
-date_mapping = {
-    '昨天': -1,
-    '前天': -2,
-    '今天': 0,
-    '明天': 1,
-    '后天': 2,
-    '大后天': 3,
-}
-
-def get_course(str:str):
-    """根据所给的信息获取课程信息"""
-    if re.compile(r'^\d{2}-\d{2}$').match(str):   # 判断是否符合日期格式
-        return course.get_by_date(str), 1
-
-    if str in ['周一', '周二', '周三', '周四', '周五', '周六', '周日']:
-        return course.get_by_week_per(str), 1
-
-    if str in date_mapping.keys():
-        date = datetime.today() + timedelta(days=date_mapping[str])
-        return course.get_by_date(date.strftime('%m-%d')), 1
-
-    if re.findall(r'上|下', str):
-        offset_week = course.locate_week()
-
-        matches = re.findall(r'上|下', str)
-        for match in matches:
-            if match == '上':
-                offset_week -= 1
-            elif match == '下':
-                offset_week += 1
-
-        str_input = re.sub(r'上|下', '', str)
-        if str_input in ['周一', '周二', '周三', '周四', '周五', '周六', '周日']:
-            return course.get_by_week_per(str_input, offset_week), 1
-
-    if course.get_by_teacher_name(str):
-        return course.get_by_teacher_name(str), 2
-
-    if course.get_by_course_name(str):
-        return course.get_by_course_name(str), 2
-
-    if course.get_by_place_name(str):
-        return course.get_by_place_name(str), 2
-
-    return None, None
-
 
 msg_handler = on_command(cmd=course_cmd,
                                     aliases=course_aliases,
@@ -115,9 +130,9 @@ async def handle_private_msg(bot: Bot, event, state: T_State, args: Message = Co
     args = args_split(args)  # /cmd [date, week, others]
 
     if args=='':
-        info, code = get_course(datetime.today().strftime('%m-%d'))
+        info, code = get_course_list(datetime.today().strftime('%m-%d'))
     else:
-        info, code = get_course(args)
+        info, code = get_course_list(args)
     if info:
         text = get_send_text(info, code)
         await msg_handler.finish(Message(text))
