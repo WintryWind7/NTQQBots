@@ -11,11 +11,17 @@ import re
 from datetime import datetime, timedelta
 from nonebot import require
 from .database_tools import reset_and_insert_today_course, get_db_todays_course_row, del_db_todays_course_row
-
+from .selenium_tools import download_pdf
 
 # 定时任务
 require("nonebot_plugin_apscheduler")
 from nonebot_plugin_apscheduler import scheduler
+
+# 此插件用于汇报课程情况
+prior = 30
+course_cmd = '课程'
+course_aliases = {'课表'}
+
 
 async def send_message_percourse(lst):
     bot = get_bot()
@@ -25,12 +31,17 @@ async def send_message_percourse(lst):
     text += f'授课教师: {lst[5]}\n'
     text += f'地点: {lst[4]}'
     await bot.send_group_msg(group=164264920, message=Message(text))
-    del_db_todays_course_row()
     await set_job_scheduled()
+
+@scheduler.scheduled_job("cron", hour="6",minute='50' ,id="daily0")
+async def get_new_course_table():
+    course.get_new_course_table()
+
 
 @scheduler.scheduled_job("cron", hour="7",minute='00' ,id="daily")
 async def run_every_day_7():
     data_list = course.get_by_date(datetime.today().strftime('%m-%d'))
+    bot = get_bot()
     for lst in data_list:
         if len(lst[3]) == 1:
             lst[3] = str(lst[3])
@@ -39,19 +50,24 @@ async def run_every_day_7():
     if data_list:
         text = f"今日课程: {datetime.today().strftime('%m-%d')}\n"
         text += get_send_text(data_list, 1)
-        bot = get_bot()
         data_list = [tuple(sublist) for sublist in data_list]
         reset_and_insert_today_course(data_list)
         await bot.send_group_msg(group=164264920, message=Message(text))
+    else:
+        await bot.send_group_msg(group=164264920, message=Message('今日没有课程...'))
+
 
 def get_send_time():
     """从数据库中获取课程"""
     lst_time = get_db_todays_course_row()
-    if lst_time:
+    while lst_time:
         time_str = lst_time[-1].split('-')[0]
         time_str = datetime.strptime(time_str, "%H:%M")
         time_str = time_str - timedelta(minutes=45)
         hours, minutes = str(time_str.hour), str(time_str.minute)
+        del_db_todays_course_row()
+        if datetime.now().time() > time_str.time():
+            continue
         return hours, minutes, lst_time
     else:
         return '00', '00', None
@@ -70,12 +86,6 @@ def set_job_scheduled():
 
 set_job_scheduled()
 
-
-
-# 此插件用于汇报课程情况
-prior = 30
-course_cmd = '课程'
-course_aliases = {'课表'}
 
 
 def args_split(args):
@@ -146,5 +156,7 @@ super_handler = on_command(cmd=('课程', '更新'),
                             block=True)
 @super_handler.handle()
 async def handle_private_msg(bot: Bot, event, state: T_State, args: Message = CommandArg()):
-    course.download_new_pdf()
-    await super_handler.finish(Message('Done.'))
+    if course.get_new_course_table():
+        await super_handler.finish(Message('Done.'))
+    else:
+        await super_handler.finish(Message('Error...'))

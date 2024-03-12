@@ -5,6 +5,7 @@ from datetime import datetime, timedelta
 import shutil
 import requests
 from nonebot import logger
+from .selenium_tools import download_pdf
 
 
 def current_path(*args):
@@ -374,28 +375,19 @@ class Course(object):
     def locate_week(self):
         return locate_week()
 
-    def download_new_pdf(self):
-        # url = 'https://jw.njcit.cn/jwglxt/kbcx/xskbcx_cxXsShcPdf.html?doType=list'
-        # response = requests.get(url, stream=True)
-        #
-        # # 检查请求是否成功
-        # if response.status_code == 200:
-        #     full_path = os.path.join('.', 'data', '课表.pdf')
-        #     os.remove(os.path.join('.', 'data', '课表.pdf'))
-        #
-        #     with open(full_path, 'wb') as file:
-        #         for chunk in response.iter_content(chunk_size=8192):
-        #             if chunk:  # 过滤掉空的chunks
-        #                 file.write(chunk)
-        #     logger.success('读取新课表成功！')
-        temp_list = []
-        course_list = main()
-        for course in course_list:
-            temp_list.append(self.preprocess(course))
-        self.course_list = temp_list
-        del temp_list
-        # else:
-        #     logger.error('读取新课表失败！')
+    def get_new_course_table(self):
+        if download_pdf():
+            temp_list = []
+            course_list = main()
+            for course in course_list:
+                temp_list.append(self.preprocess(course))
+            self.course_list = temp_list
+            del temp_list
+            logger.success('获取新课表成功！')
+            return True
+        else:
+            logger.error('获取新课表失败！')
+            return False
 
 date_mapping = {
     '昨天': -1,
