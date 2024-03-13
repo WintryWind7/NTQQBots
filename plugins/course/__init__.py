@@ -30,7 +30,7 @@ async def send_message_percourse(lst):
     text += f'节次: {lst[1]} {lst[2]} ({lst[-1]})\n'
     text += f'授课教师: {lst[5]}\n'
     text += f'地点: {lst[4]}'
-    await bot.send_group_msg(group=164264920, message=Message(text))
+    await bot.send_group_msg(group_id=164264920, message=Message(text))
     await set_job_scheduled()
 
 @scheduler.scheduled_job("cron", hour="6",minute='50' ,id="daily0")
@@ -52,9 +52,9 @@ async def run_every_day_7():
         text += get_send_text(data_list, 1)
         data_list = [tuple(sublist) for sublist in data_list]
         reset_and_insert_today_course(data_list)
-        await bot.send_group_msg(group=164264920, message=Message(text))
+        await bot.send_group_msg(group_id=164264920, message=Message(text))
     else:
-        await bot.send_group_msg(group=164264920, message=Message('今日没有课程...'))
+        await bot.send_group_msg(group_id=164264920, message=Message('今日没有课程...'))
 
 
 def get_send_time():
