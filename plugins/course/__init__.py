@@ -160,6 +160,7 @@ async def handle_private_msg(bot: Bot, event, state: T_State, args: Message = Co
     # try:
     data_list = course.get_by_date(datetime.today().strftime('%m-%d'))
     data_list = [tuple(sublist) for sublist in data_list]
+    print('data_list: ', data_list)
     reset_and_insert_today_course(data_list)
     set_job_scheduled()
     await super_handler.finish(Message('Done.'))
