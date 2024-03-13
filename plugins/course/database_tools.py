@@ -62,21 +62,20 @@ def reset_and_insert_today_course(data_list, db_name=current_path('data', 'cours
     db_connection = sqlite3.connect(db_name)
     cursor = db_connection.cursor()
 
-    # try:
+    try:
     # 清空todays_course表
-    cursor.execute(f"DELETE FROM todays_course")
-
-    # 使用executemany()方法批量插入数据
-    cursor.executemany('''  
-        INSERT INTO todays_course (course_name, period_per_week, period_per_day, week_no, place, teacher, class_composition, credits, specific_time)  
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  
-    ''', data_list)
-    db_connection.commit()
-    # except sqlite3.Error as e:
-    #     logger.error("操作数据库时出错: {e}")
-    #     db_connection.rollback()  # 回滚事务
-    # finally:
-    #     cursor.close()  # 关闭游标
+        cursor.execute(f"DELETE FROM todays_course")
+        # 使用executemany()方法批量插入数据
+        cursor.executemany('''  
+            INSERT INTO todays_course (course_name, period_per_week, period_per_day, week_no, place, teacher, class_composition, credits, specific_time)  
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  
+        ''', data_list)
+        db_connection.commit()
+    except sqlite3.Error as e:
+        logger.error("操作数据库时出错: {e}")
+        db_connection.rollback()  # 回滚事务
+    finally:
+        cursor.close()  # 关闭游标
 
 
 def get_db_todays_course_row():
