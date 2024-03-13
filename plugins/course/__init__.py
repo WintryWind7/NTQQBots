@@ -157,17 +157,17 @@ super_handler = on_command(cmd=('课程', '更新'),
 @super_handler.handle()
 async def handle_private_msg(bot: Bot, event, state: T_State, args: Message = CommandArg()):
     # if course.get_new_course_table():
-    try:
-        data_list = course.get_by_date(datetime.today().strftime('%m-%d'))
-        for lst in data_list:
-            if len(lst[3]) == 1:
-                lst[3] = str(lst[3])
-            else:
-                lst[3] = f"{lst[3][0]}-{lst[3][-1]}"
-        data_list = [tuple(sublist) for sublist in data_list]
-        print('data_list: ', data_list)
-        reset_and_insert_today_course(data_list)
-        set_job_scheduled()
-        await super_handler.finish(Message('Done.'))
-    except:
-        await super_handler.finish(Message('Error...'))
+    # try:
+    data_list = course.get_by_date(datetime.today().strftime('%m-%d'))
+    for lst in data_list:
+        if len(lst[3]) == 1:
+            lst[3] = str(lst[3])
+        else:
+            lst[3] = f"{lst[3][0]}-{lst[3][-1]}"
+    data_list = [tuple(sublist) for sublist in data_list]
+    print('data_list: ', data_list)
+    reset_and_insert_today_course(data_list)
+    set_job_scheduled()
+    await super_handler.finish(Message('Done.'))
+    # except:
+    #     await super_handler.finish(Message('Error...'))
