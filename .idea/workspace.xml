@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="840d1a83-ae4b-47d1-af8b-ecd8fcc25524" name="更改" comment="v1.0.3 -1 增加了每节课的定时播报，修改bug。" />
+    <list default="true" id="840d1a83-ae4b-47d1-af8b-ecd8fcc25524" name="更改" comment="v1.0.3 -3 增加了每节课的定时播报，修改bug。" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -91,7 +91,7 @@
       <recent name="D:\Codes\Projects\NTQQBots\plugins\course\data" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.bot">
+  <component name="RunManager" selected="Python.reset_course">
     <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="NTQQBots" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -136,7 +136,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="database_tools (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="reset_course" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="NTQQBots" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -149,7 +149,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/plugins/course/database_tools.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/plugins/course/reset_course.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -204,11 +204,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.reset_course" />
         <item itemvalue="Python.bot" />
         <item itemvalue="Python.selenium_tools" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.__init__" />
-        <item itemvalue="Python.database_tools (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -243,6 +243,7 @@
       <workItem from="1710166427670" duration="7370000" />
       <workItem from="1710202584333" duration="10275000" />
       <workItem from="1710249054230" duration="3114000" />
+      <workItem from="1710295718189" duration="567000" />
     </task>
     <task id="LOCAL-00001" summary="v1.0.0 -1">
       <option name="closed" value="true" />
@@ -540,7 +541,39 @@
       <option name="project" value="LOCAL" />
       <updated>1710252178346</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="v1.0.3 -2 增加了每节课的定时播报，修改bug。">
+      <option name="closed" value="true" />
+      <created>1710295760178</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1710295760178</updated>
+    </task>
+    <task id="LOCAL-00039" summary="v1.0.3 -2 增加了每节课的定时播报，修改bug。">
+      <option name="closed" value="true" />
+      <created>1710295774409</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1710295774409</updated>
+    </task>
+    <task id="LOCAL-00040" summary="v1.0.3 -2 增加了每节课的定时播报，修改bug。">
+      <option name="closed" value="true" />
+      <created>1710295783499</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1710295783499</updated>
+    </task>
+    <task id="LOCAL-00041" summary="v1.0.3 -3 增加了每节课的定时播报，修改bug。">
+      <option name="closed" value="true" />
+      <created>1710296281142</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1710296281142</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -572,7 +605,9 @@
     <MESSAGE value="v1.0.1 -2 修改了路径格式，现在可以在plugins里创建data" />
     <MESSAGE value="v1.0.2 -1 增加了课程定时播报" />
     <MESSAGE value="v1.0.3 -1 增加了每节课的定时播报，修改bug。" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.0.3 -1 增加了每节课的定时播报，修改bug。" />
+    <MESSAGE value="v1.0.3 -2 增加了每节课的定时播报，修改bug。" />
+    <MESSAGE value="v1.0.3 -3 增加了每节课的定时播报，修改bug。" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.0.3 -3 增加了每节课的定时播报，修改bug。" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/NTQQBots$pdf_to_csv.coverage" NAME="pdf_to_csv 覆盖结果" MODIFIED="1709882442353" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plugins/course" />
@@ -580,6 +615,7 @@
     <SUITE FILE_PATH="coverage/NTQQBots$selenium_tools.coverage" NAME="selenium_tools 覆盖结果" MODIFIED="1710251322878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plugins/course" />
     <SUITE FILE_PATH="coverage/NTQQBots$get_course__1_.coverage" NAME="get_course (1) 覆盖结果" MODIFIED="1710168293561" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plugins/course" />
     <SUITE FILE_PATH="coverage/NTQQBots$database_tools__1_.coverage" NAME="database_tools (1) 覆盖结果" MODIFIED="1710205793231" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plugins/course" />
+    <SUITE FILE_PATH="coverage/NTQQBots$reset_course.coverage" NAME="reset_course 覆盖结果" MODIFIED="1710296093301" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plugins/course" />
     <SUITE FILE_PATH="coverage/NTQQBots$date_time.coverage" NAME="date_time 覆盖结果" MODIFIED="1709739949136" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plugins/course" />
     <SUITE FILE_PATH="coverage/NTQQBots$__init__.coverage" NAME="__init__ 覆盖结果" MODIFIED="1710208643703" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plugins/course" />
     <SUITE FILE_PATH="coverage/NTQQBots$test.coverage" NAME="test 覆盖结果" MODIFIED="1710249456378" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plugins/course" />
