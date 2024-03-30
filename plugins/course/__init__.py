@@ -29,13 +29,13 @@ course_cmd = '课程'
 course_aliases = {'课表'}
 
 
-async def send_message_percourse(lst):
+async def send_message_percourse(co:TodayCourseDB):
     bot = get_bot()
     text = f'-----下节课程-----'
-    text += f'课程名称: {lst[0]}\n'
-    text += f'节次: {lst[1]} {lst[2]} ({lst[-1]})\n'
-    text += f'授课教师: {lst[5]}\n'
-    text += f'地点: {lst[4]}'
+    text += f'课程名称: {co.course_name}\n'
+    text += f'节次: {co.week_per} {co.class_time} ({co.class_period})\n'
+    text += f'授课教师: {co.teacher}\n'
+    text += f'地点: {co.location}'
     await bot.send_group_msg(group_id=164264920, message=Message(text))
     await set_job_scheduled()
 
