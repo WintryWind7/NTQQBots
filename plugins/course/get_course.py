@@ -9,6 +9,7 @@ from .base import current_path, locate_week, find_info_by_pattern, get_course_li
 import sqlite3
 import asyncio
 from .course_db import CourseDB, TodayCourseDB
+from .selenium_tools import download_pdf
 
 
 # === class Course start===
@@ -91,6 +92,11 @@ class Course(object):
             )
         logger.success('今日课程表更新成功！')
 
+    def get_new_course_table(self):
+        if download_pdf():
+            return True
+        else:
+            return False
 
     def process_weeks(self, text):
         if len(text[:-1]) < 3:

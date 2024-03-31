@@ -16,6 +16,7 @@ asyncio.run(db_init())
 from .course_db import CourseDB, TodayCourseDB
 from typing import List, Tuple
 from .get_course import course, get_course_list, get_course_by_str
+from nonebot import logger
 
 
 
@@ -39,9 +40,13 @@ async def send_message_percourse(co:TodayCourseDB):
     await bot.send_group_msg(group_id=164264920, message=Message(text))
     await set_job_scheduled()
 
-# @scheduler.scheduled_job("cron", hour="6",minute='50' ,id="daily0")
-# async def get_new_course_table():
-#     course.get_new_course_table()
+@scheduler.scheduled_job("cron", hour="6",minute='50' ,id="daily0")
+async def get_new_course_table():
+    if course.get_new_course_table():
+        await course.update()
+    else:
+        logger.error('更新课表失败！')
+
 
 
 @scheduler.scheduled_job("cron", hour="7",minute='00', id="daily")
@@ -162,10 +167,14 @@ super_handler = on_command(cmd=('课程', '更新'),
                             block=True)
 @super_handler.handle()
 async def handle_private_msg(bot: Bot, event, state: T_State, args: Message = CommandArg()):
-    await course.update()
+    if course.get_new_course_table():
+        await course.update()
+    else:
+        logger.error('更新大课表失败！')
     await course.update_today_courses()
     await set_job_scheduled()
     await super_handler.finish(Message('Done.'))
+
     # except:
     #     await super_handler.finish(Message('Error...'))
 
