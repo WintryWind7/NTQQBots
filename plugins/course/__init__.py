@@ -40,12 +40,12 @@ async def send_message_percourse(co:TodayCourseDB):
     await bot.send_group_msg(group_id=164264920, message=Message(text))
     await set_job_scheduled()
 
-@scheduler.scheduled_job("cron", hour="6",minute='50' ,id="daily0")
-async def get_new_course_table():
-    if course.get_new_course_table():
-        await course.update()
-    else:
-        logger.error('更新课表失败！')
+# @scheduler.scheduled_job("cron", hour="6",minute='50' ,id="daily0")
+# async def get_new_course_table():
+#     if course.get_new_course_table():
+#         await course.update()
+#     else:
+#         logger.error('更新课表失败！')
 
 
 
@@ -167,10 +167,11 @@ super_handler = on_command(cmd=('课程', '更新'),
                             block=True)
 @super_handler.handle()
 async def handle_private_msg(bot: Bot, event, state: T_State, args: Message = CommandArg()):
-    if course.get_new_course_table():
-        await course.update()
-    else:
-        logger.error('更新大课表失败！')
+    # if course.get_new_course_table():
+    #     await course.update()
+    # else:
+    #     logger.error('更新大课表失败！')
+    await course.update()
     await course.update_today_courses()
     await set_job_scheduled()
     await super_handler.finish(Message('Done.'))
