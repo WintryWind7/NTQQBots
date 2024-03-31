@@ -18,8 +18,6 @@ class Course(object):
     def __init__(self):
         self.weeks_no = []
 
-
-
     async def update(self):
         await CourseDB.all().delete()
         course_list = get_course_list()
@@ -75,7 +73,7 @@ class Course(object):
     async def update_today_courses(self):
         await TodayCourseDB.all().delete()
 
-        course_list = self.get_by_date(datetime.today().strftime('%m-%d'))
+        course_list = await self.get_by_date(datetime.today().strftime('%m-%d'))
 
         for i, course in enumerate(course_list):
             await TodayCourseDB.create(

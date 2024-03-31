@@ -44,15 +44,16 @@ async def send_message_percourse(co:TodayCourseDB):
 #     course.get_new_course_table()
 
 
-@scheduler.scheduled_job("cron", hour="7",minute='00', id="daily")
+@scheduler.scheduled_job("cron", hour="12",minute='00', id="daily")
 async def run_every_day_7():
     await course.update_today_courses()
     bot = get_bot()
     course_list = TodayCourseDB.all()
-    if course_list:
+    if await course_list.exists():
         text = f"今日课程: {datetime.today().strftime('%m-%d')}\n"
         text += get_send_text(course_list, 1)
         await set_job_scheduled()
+        await bot.send_
         await bot.send_group_msg(group_id=164264920, message=Message(text))
     else:
         await bot.send_group_msg(group_id=164264920, message=Message(f"今日：{datetime.today().strftime('%m-%d')} 没有课程 ^.^..."))
@@ -66,8 +67,9 @@ async def get_send_time():
         time_str = datetime.strptime(time_str, "%H:%M")
         time_str = time_str - timedelta(minutes=45)
         hours, minutes = str(time_str.hour), str(time_str.minute)
-        TodayCourseDB.delete()
+        await lst.delete()
         if datetime.now().time() > time_str.time():
+            lst: CourseDB = await TodayCourseDB.first()
             continue
         return hours, minutes, lst
     else:
@@ -166,8 +168,6 @@ async def handle_private_msg(bot: Bot, event, state: T_State, args: Message = Co
     await super_handler.finish(Message('Done.'))
     # except:
     #     await super_handler.finish(Message('Error...'))
-
-
 
 
 super_handler_test = on_command(cmd=('测试'),
