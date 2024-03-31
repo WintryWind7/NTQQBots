@@ -44,7 +44,7 @@ async def send_message_percourse(co:TodayCourseDB):
 #     course.get_new_course_table()
 
 
-@scheduler.scheduled_job("cron", hour="12",minute='00', id="daily")
+@scheduler.scheduled_job("cron", hour="7",minute='00', id="daily")
 async def run_every_day_7():
     await course.update_today_courses()
     bot = get_bot()
