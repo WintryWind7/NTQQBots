@@ -75,21 +75,22 @@ class Course(object):
         await TodayCourseDB.all().delete()
 
         course_list = await self.get_by_date(datetime.today().strftime('%m-%d'))
-
-        for i, course in enumerate(course_list):
+        i = 0
+        for course in course_list:
             await TodayCourseDB.create(
                 id=i,
-                course_name=course[1],
-                week_per=course[2],
-                class_time=course[3],
-                weeks=course[4],
-                location=course[5],
-                teacher=course[6],
-                class_group=course[7],
-                credit=course[8],
-                class_period=course[9],
-                weeks_no=self.process_weeks(course[4]),
+                course_name=course.course_name,
+                week_per=course.week_per,
+                class_time=course.class_time,
+                weeks=course.weeks,
+                location=course.location,
+                teacher=course.teacher,
+                class_group=course.class_group,
+                credit=course.credit,
+                class_period=course.class_period,
+                weeks_no=course.weeks_no,
             )
+            i += 1
         logger.success('今日课程表更新成功！')
 
     def get_new_course_table(self):
