@@ -31,7 +31,7 @@ course_aliases = {'课表'}
 
 async def send_message_percourse(co:TodayCourseDB):
     bot = get_bot()
-    text = f'-----下节课程-----'
+    text = f'-----下节课程-----\n'
     text += f'课程名称: {co.course_name}\n'
     text += f'节次: {co.week_per} {co.class_time} ({co.class_period})\n'
     text += f'授课教师: {co.teacher}\n'
@@ -54,7 +54,9 @@ async def run_every_day_7():
     bot = get_bot()
     course_list = TodayCourseDB.all()
     if await course_list.exists():
-        text = f"今日课程: {datetime.today().strftime('%m-%d')}\n"
+        date_obj = datetime.today()
+        week = '周' + ['一', '二', '三', '四', '五', '六', '日'][date_obj.weekday()]
+        text = f"今日课程: {datetime.today().strftime('%m-%d')} 第{course.locate_week()}周 {week}\n"
         text += get_send_text(course_list, 1)
         await set_job_scheduled()
         await bot.send_
