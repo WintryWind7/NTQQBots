@@ -166,6 +166,7 @@ async def get_course_by_str(search_str: str):
 course = Course()
 async def main():
     await course.update()
+    await course.update_today_courses()
 
 asyncio.run(main())
 

@@ -19,7 +19,6 @@ from .get_course import course, get_course_list, get_course_by_str
 from nonebot import logger
 
 
-
 # 定时任务
 require("nonebot_plugin_apscheduler")
 from nonebot_plugin_apscheduler import scheduler
@@ -102,20 +101,20 @@ def args_split(args):
 def get_send_text(info:List[CourseDB], code:int):
 
     text = ''
-    le = len(info)
+    le = info.count()
     if code == 1:
-        i = -1
+        i = 0
         for co in info:
             text += f'课程名称: {co.course_name}\n'
             text += f'节次: {co.week_per} {co.class_time} ({co.class_period})\n'
             text += f'授课教师: {co.teacher}\n'
             text += f'地点: {co.location}'
             i += 1
-            if i != le - 1:
+            if i != le:
                 text += '\n\n'
         return text
     elif code == 2:
-        i = -1
+        i = 0
         for co in info:
             text += f'课程名称: {co.course_name}\n'
             text += f'节次: {co.week_per} {co.class_time} ({co.class_period})\n'
@@ -128,7 +127,7 @@ def get_send_text(info:List[CourseDB], code:int):
             text += f'教学班组成: {co.class_group})\n'
             text += f'学分: {co.credit})'
             i += 1
-            if i != le - 1:
+            if i != le:
                 text += '\n\n'
         return text
     else:
