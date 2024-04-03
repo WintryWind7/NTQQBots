@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="840d1a83-ae4b-47d1-af8b-ecd8fcc25524" name="更改" comment="v1.1.0 -9 修复定时bug">
+    <list default="true" id="840d1a83-ae4b-47d1-af8b-ecd8fcc25524" name="更改" comment="v1.1.0 -10 修复定时bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/course/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/course/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -262,15 +261,8 @@
       <workItem from="1711941729390" duration="198000" />
       <workItem from="1711985312717" duration="162000" />
       <workItem from="1712016389227" duration="540000" />
-      <workItem from="1712066040141" duration="280000" />
-    </task>
-    <task id="LOCAL-00012" summary="v1.0.0 -2">
-      <option name="closed" value="true" />
-      <created>1710083130894</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1710083130894</updated>
+      <workItem from="1712066040141" duration="301000" />
+      <workItem from="1712110857450" duration="539000" />
     </task>
     <task id="LOCAL-00013" summary="v1.0.0 -2">
       <option name="closed" value="true" />
@@ -656,7 +648,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712016791288</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="v1.1.0 -10 修复定时bug">
+      <option name="closed" value="true" />
+      <created>1712066334079</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1712066334079</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -675,7 +675,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Revert &quot;Initial commit&quot;&#10;&#10;This reverts commit 2966643c" />
     <MESSAGE value="v1.0.0 -2" />
     <MESSAGE value="v1.0.0 -3" />
     <MESSAGE value="v1.0.0 -4" />
@@ -700,7 +699,8 @@
     <MESSAGE value="v1.1.0 -7 课表爬取有bug，关了" />
     <MESSAGE value="v1.1.0 -8 修复定时bug" />
     <MESSAGE value="v1.1.0 -9 修复定时bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.1.0 -9 修复定时bug" />
+    <MESSAGE value="v1.1.0 -10 修复定时bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.1.0 -10 修复定时bug" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/NTQQBots$selenium_tools.coverage" NAME="selenium_tools 覆盖结果" MODIFIED="1711858242379" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plugins/course" />

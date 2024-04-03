@@ -52,7 +52,7 @@ async def send_message_percourse(co:TodayCourseDB):
 async def run_every_day_7():
     await course.update_today_courses()
     bot = get_bot()
-    course_list = TodayCourseDB.all()
+    course_list = await TodayCourseDB.all()
     if await course_list.exists():
         date_obj = datetime.today()
         week = '周' + ['一', '二', '三', '四', '五', '六', '日'][date_obj.weekday()]
