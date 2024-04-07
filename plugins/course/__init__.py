@@ -53,7 +53,7 @@ async def run_every_day_7():
     await course.update_today_courses()
     bot = get_bot()
     course_list = await TodayCourseDB.all()
-    if await course_list.exists():
+    if course_list:
         date_obj = datetime.today()
         week = '周' + ['一', '二', '三', '四', '五', '六', '日'][date_obj.weekday()]
         text = f"今日课程: {datetime.today().strftime('%m-%d')} 第{course.locate_week()}周 {week}\n"
@@ -67,7 +67,7 @@ async def run_every_day_7():
 
 async def get_send_time():
     """从数据库中获取课程"""
-    lst:CourseDB = await TodayCourseDB.first()
+    lst:TodayCourseDB = await TodayCourseDB.first()
     while lst:
         time_str = lst.class_period.split('-')[0]
         time_str = datetime.strptime(time_str, "%H:%M")
