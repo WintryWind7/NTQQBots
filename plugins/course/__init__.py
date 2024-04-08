@@ -103,7 +103,10 @@ def args_split(args):
 def get_send_text(info:List[CourseDB], code:int):
 
     text = ''
-    le = info.count()
+    if isinstance(info, list):
+        le = len(info)
+    else:
+        le = 1
     if code == 1:
         i = 0
         for co in info:
