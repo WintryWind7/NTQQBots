@@ -59,7 +59,6 @@ async def run_every_day_7():
         text = f"今日课程: {datetime.today().strftime('%m-%d')} 第{course.locate_week()}周 {week}\n"
         text += get_send_text(course_list, 1)
         await set_job_scheduled()
-        await bot.send_
         await bot.send_group_msg(group_id=164264920, message=Message(text))
     else:
         await bot.send_group_msg(group_id=164264920, message=Message(f"今日：{datetime.today().strftime('%m-%d')} 没有课程 ^.^..."))
